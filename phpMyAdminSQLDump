@@ -1,0 +1,128 @@
+
+INSERT INTO `assets` (`id`, `assettype_id`, `user_id`, `assetusage_id`, `name`, `purchasedate`, `licenseplate`, `milage`, `serialnr`, `brand`, `artist`, `value`, `currency`, `initialinvestment`, `valuebase`, `street`, `city`, `coordinates`, `revenue`, `costs`, `interest`, `enddate`, `term`, `notes`, `created_at`, `updated_at`) VALUES
+(2, 3, 1, 1, 'Helga', NULL, NULL, NULL, NULL, NULL, NULL, 1000, 'GBP', NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, '3.00', 13, 2, 'Helga ist die Marke der Evasis edibles gmbh in berndorf, noederösterreich', '2019-04-25 07:26:05', '2019-05-16 05:50:29'),
+(4, 1, 1, 2, 'Rosalia Chladek Gasse', NULL, NULL, NULL, NULL, NULL, NULL, 285000, NULL, NULL, 'Schätzung', '1220', 'Rosalia Chladek Gasse', NULL, 11000, 2000, NULL, NULL, NULL, 'In Essling', '2019-04-29 12:47:21', '2019-05-08 09:42:25'),
+(7, 4, 1, 1, 'A Lange Söhne', '1.1.1209', NULL, NULL, '123', 'A LAnge Söhne', NULL, 22000, NULL, 22000, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'adqwdewdfe', '2019-05-08 09:46:37', '2019-05-08 09:49:53'),
+(8, 5, 1, 2, 'Citroen C5', '1.1.2012', 'W63865A', 1234567, '12345', 'Citroen c5 Tourer', NULL, 6500, NULL, 20000, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'oder doch nicht?', '2019-05-08 09:57:03', '2019-05-08 10:00:27'),
+(9, 6, 1, 1, 'VVB Vorsorgekasse', '1.1.2019', NULL, NULL, '1234', 'VVB Vorsorgekasse', 'Wien Energie', 10000, 'EUR', 22000, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, '3.58', NULL, NULL, 'g', '2019-05-08 10:04:45', '2019-05-16 06:26:59'),
+(10, 7, 1, 1, 'Meer mit Frau', '1.1.2012', 'Wohnzimmer Tokiostrasse', NULL, NULL, 'Aquarel auf Leinen', 'Klaus Hollauf', 330, NULL, 310, 'Marktwert', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'mk', '2019-05-08 10:19:16', '2019-05-08 10:21:38'),
+(11, 8, 1, 1, 'EUR Bestand Kasten', '1.1.2222', 'Beiges Sakko in meinem Kasten', NULL, NULL, 'EUR in 100er', NULL, 2200, NULL, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Notgroschen', '2019-05-08 10:23:11', '2019-05-08 10:23:53'),
+(12, 9, 1, 1, 'Silberbarren', 'various', 'Kasten oben , Wärmepflaster', NULL, NULL, 'Silber', '1,9 kg', 770, NULL, NULL, 'Schätzung', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-08 10:25:35', '2019-05-08 10:26:07'),
+(13, 10, 1, 1, 'Volksbank', '1.1.2019', 'LAde Gürtel', NULL, '23234325235', 'Volksbank Wien', NULL, 2200, 'EUR', NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, '2.50', NULL, NULL, 'jkn', '2019-05-08 10:27:42', '2019-05-16 06:22:37'),
+(14, 12, 1, 1, 'Rauchfangkehrer Firma', '1.1.2019', '95%', NULL, 'FN 123456 ab', 'Mahler-Hutter KG', 'Ulrike Schildböck', 270000, NULL, 123, 'Kaufpreis', NULL, '2560 Berndorf', NULL, 10000, 2000, NULL, NULL, NULL, NULL, '2019-05-08 10:32:20', '2019-05-08 10:43:47'),
+(15, 13, 1, 1, 'OMV Aktien', '1.1.2019', '234', NULL, '12345', 'BAnk Austria', NULL, 340000, NULL, 310, 'Kaufpreis', NULL, NULL, NULL, 2000, NULL, NULL, NULL, NULL, 'oinö', '2019-05-08 10:46:59', '2019-05-08 10:47:25'),
+(16, 14, 1, 1, 'Wienerberger Anleihe 2022', '1.1.2222', '22', NULL, '1234', 'Bank Austrsi', NULL, 10000, NULL, 1234, 'Depotauszug', NULL, NULL, NULL, NULL, NULL, '0.00', NULL, NULL, 'abd lorem ipsum', '2019-05-08 10:49:39', '2019-05-08 10:50:40'),
+(17, 16, 1, 1, 'Ferienhjaus zur Vermietung', NULL, NULL, NULL, NULL, NULL, NULL, 150000, NULL, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-09 10:42:47', '2019-05-09 11:05:00'),
+(18, 13, 1, 1, 'Austrian', NULL, NULL, NULL, NULL, NULL, NULL, 10000, NULL, NULL, 'Kaufpreis', NULL, NULL, NULL, 1000, NULL, NULL, NULL, NULL, NULL, '2019-05-13 06:51:50', '2019-05-13 06:52:09'),
+(19, 1, 1, 1, 'Rosalia Chladek Gasse', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-14 08:57:31', '2019-05-14 08:57:31'),
+(20, 1, 1, 1, 'ml', NULL, NULL, NULL, NULL, NULL, NULL, 3560, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-16 05:39:23', '2019-05-16 05:39:23'),
+(21, 1, 1, 1, 'kmlä', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-16 05:39:40', '2019-05-16 05:39:40');
+
+
+INSERT INTO `assettypes` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'immo', NULL, NULL),
+(3, 'crowdfunding', NULL, NULL),
+(4, 'uhr', NULL, NULL),
+(5, 'car', NULL, NULL),
+(6, 'abfertigung', NULL, NULL),
+(7, 'art', NULL, NULL),
+(8, 'cash', NULL, NULL),
+(9, 'gold', NULL, NULL),
+(10, 'sparbuch', NULL, NULL),
+(12, 'firmenanteile', NULL, NULL),
+(13, 'aktien', NULL, NULL),
+(14, 'anleihen', NULL, NULL),
+(15, 'factoring', NULL, NULL),
+(16, 'sonstige', NULL, NULL);
+
+
+INSERT INTO `assetusages` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'hold', NULL, NULL),
+(2, 'rent', NULL, NULL);
+
+
+INSERT INTO `contracts` (`id`, `asset_id`, `liability_id`, `partner_id`, `name`, `value`, `storedlocation`, `path`, `agreedon`, `termination`, `reminder`, `created_at`, `updated_at`) VALUES
+(1, 1, 0, 1, 'Maja', 1000, 'in meiner schublade', NULL, '2019-04-02', '2019-04-02', 'none', '2019-04-25 07:27:10', '2019-04-29 15:36:40'),
+(3, 3, 0, 3, 'Manuel Mahler-Hutter', 3560, 'in meiner schublade', NULL, NULL, NULL, 'none', '2019-04-27 10:45:44', '2019-04-29 07:19:26'),
+(9, 1, 0, 1, 'pdf', NULL, 'in meiner schublade', NULL, NULL, NULL, 'none', '2019-04-27 13:47:06', '2019-04-29 10:24:10'),
+(12, 2, 0, 2, 'Helgavertrag', NULL, NULL, NULL, NULL, NULL, 'none', '2019-04-29 09:09:47', '2019-04-29 09:09:47'),
+(21, 4, 0, 0, 'Mietvertrag Hamid', 12000, 'Mappe Rosalia Chladek', '155654931428112018 - SVA.pdf', NULL, NULL, 'none', '2019-04-29 12:48:34', '2019-04-29 12:48:34'),
+(22, 1, 0, 2, 'Upload', 3560, NULL, '1556564226AT742081500000410860_D5680DEC32C4B811.pdf', NULL, NULL, 'none', '2019-04-29 16:57:06', '2019-04-29 16:57:06'),
+(23, 10, 0, 7, 'Kaufvertrag', 2000, 'Im Kastern', '15577376222382450.jpg', '2019-05-13', '2019-05-07', '1w', '2019-05-13 06:53:42', '2019-05-13 06:53:42'),
+(25, NULL, 6, NULL, 'Russia Today', NULL, NULL, '1557837003AT742081500000410860_D5680DEC32C4B811.pdf', NULL, NULL, NULL, NULL, NULL),
+(26, NULL, 9, NULL, 'Russia Today', NULL, NULL, '1557837061AT742081500000410860_D5680DEC32C4B811.pdf', NULL, NULL, NULL, NULL, NULL),
+(27, NULL, 8, NULL, 'Russia Today', NULL, NULL, '1557838474AT742081500000410860_D5680DEC32C4B811.pdf', NULL, NULL, NULL, NULL, NULL);
+
+
+--
+
+INSERT INTO `contract_partner` (`id`, `contract_id`, `partner_id`, `created_at`, `updated_at`) VALUES
+(1, 5, 1, NULL, NULL),
+(2, 6, 1, NULL, NULL),
+(3, 7, 1, NULL, NULL),
+(4, 8, 1, NULL, NULL),
+(7, 11, 3, NULL, NULL),
+(16, 2, 2, NULL, NULL),
+(17, 9, 2, NULL, NULL),
+(26, 13, 1, NULL, NULL),
+(34, 14, 2, NULL, NULL),
+(35, 4, 2, NULL, NULL),
+(42, 10, 2, NULL, NULL),
+(49, 15, 2, NULL, NULL),
+(50, 16, 2, NULL, NULL),
+(51, 1, 2, NULL, NULL),
+(52, 21, 4, NULL, NULL),
+(53, 22, 2, NULL, NULL),
+(54, 23, 7, NULL, NULL);
+
+
+
+
+INSERT INTO `inherers` (`id`, `is_active`, `user_id`, `name`, `prename`, `email`, `telnr`, `passcode`, `graceperiod`, `message`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'Manuel Mahler-Hutter', 'Manuel', 'manuelmahlerhutter@gmail.com', '+436502504784', '1029ecf', '24 hours', 'lorem ipsum is a s f fgergergvergdf', '2019-04-25 06:14:16', '2019-05-16 07:28:40'),
+(3, 0, 1, 'Karl Heinz Pertritsch', 'Karl HJEin', 'manuel.mahler-hutter@wienenergie.at', '+4365025047845', '764db1b', '24 hours', 'Hy there', '2019-05-16 07:34:07', '2019-05-16 08:21:10'),
+(5, 1, 1, 'Karl Heinz Pertritschmkl', 'Karl HJEinkml', 'manuel.mahler-hutter@wienenergie.atl', '+4365025047845klm', '277a3bc', '3 days', 'Hy there', '2019-05-16 07:35:18', '2019-05-16 07:35:18');
+
+-- --------------------------------------------------------
+
+
+
+INSERT INTO `liabilities` (`id`, `user_id`, `liabilitytype`, `name`, `agreementedate`, `licenseplate`, `contractnr`, `creditor`, `currency`, `currentvalue`, `initialvalue`, `interest`, `enddate`, `term`, `notes`, `created_at`, `updated_at`) VALUES
+(2, 1, 'Kreditkarte', 'Russia Today', NULL, NULL, '526626998556441', 'Visa Bank AG', 'EUR', 2500, 3900, '3.56', NULL, NULL, '+ö.,', '2019-05-13 10:23:42', '2019-05-16 06:28:46'),
+(3, 2, 'Gehaltsvorauszahlung', 'Gehaltsvorauszahlung', NULL, NULL, '123456', 'Brenntag Austria AG', NULL, 156156, 321, NULL, '2019-05-24', NULL, NULL, '2019-05-13 10:34:01', '2019-05-13 10:34:01'),
+(4, 1, 'Kreditkarte', 'Darlehensvertrag', '2019-05-14', NULL, '123456', 'Brenntag Austria AG', 'EUR', 225635, 350000, '3.25', '2019-05-12', NULL, 'Infos zu diesem Board\r\n Beschreibung für Ihr Board hinzufügen\r\n Hintergrund ändern\r\n Karten filtern', '2019-05-13 11:22:36', '2019-05-16 06:09:22'),
+(5, 1, 'Kreditkarte', 'abcd', NULL, NULL, NULL, NULL, 'EUR', NULL, NULL, '3.33', '2019-05-17', NULL, NULL, '2019-05-14 08:52:32', '2019-05-16 06:09:09'),
+(6, 1, 'Kreditkarte', 'Manuel Mahler-Hutter', NULL, NULL, '45', 'Brenntag Austria AG', NULL, 25654, 123456, '3.00', '2019-05-01', NULL, '321', '2019-05-14 09:19:03', '2019-05-14 10:30:14'),
+(7, 1, 'Kreditkarte', 'Russia Today', NULL, NULL, NULL, NULL, 'EUR', NULL, NULL, '3.54', NULL, NULL, NULL, '2019-05-14 09:25:47', '2019-05-16 05:53:43'),
+(11, 1, 'Kreditkarte', 'Russia Today', NULL, NULL, NULL, NULL, NULL, 236, NULL, NULL, NULL, NULL, NULL, '2019-05-14 11:17:39', '2019-05-14 11:17:39'),
+(12, 1, 'Wohnbaukredit', 'Darlehen Razanac', NULL, NULL, '231', 'Visa Bank AG', 'EUR', 35222, 123, '3.33', NULL, NULL, NULL, '2019-05-16 06:28:36', '2019-05-16 06:28:36');
+
+
+
+
+
+
+INSERT INTO `partners` (`id`, `user_id`, `name`, `tel`, `email`, `street`, `city`, `idnumber`, `contactperson`, `created_at`, `updated_at`) VALUES
+(2, 1, 'Manuel Mahler-Hutter', '+436502504784', 'manuelmahlerhutter@gmail.com', '6/2/14', NULL, 'üö+', 'Mr. Martin May', '2019-04-25 07:25:24', '2019-04-29 09:23:10'),
+(3, 1, 'MArtinus', '012356', 'mn@ddm.ss', 'efae', NULL, '34567', 'Mr. Martin May', '2019-04-25 07:55:21', '2019-04-25 07:55:21'),
+(4, 1, 'HAmid Danesh', '06520563', 'han@hamidd.dd', '1120 Wien', NULL, NULL, 'Hamid Danesh', '2019-04-29 12:49:17', '2019-04-29 12:49:17'),
+(7, 1, 'Sherif Haküolpmida', '+436502504784', 'manuelmahlerhutter@gmail.com', '6/2/14', NULL, 'üö+', 'sherif', '2019-05-09 11:31:47', '2019-05-09 11:31:47');
+
+
+
+INSERT INTO `photos` (`id`, `asset_id`, `partner_id`, `path`, `created_at`, `updated_at`) VALUES
+(2, NULL, 1, '15561801371901146_10203834421525862_6774409722254910769_n.jpg', NULL, NULL),
+(3, NULL, 3, '15561861212382450.jpg', NULL, NULL),
+(4, 1, NULL, '1556192523103038489.jpg', NULL, NULL),
+(5, 3, NULL, '15561937872382450.jpg', NULL, NULL),
+(7, 4, NULL, '15573132013261078731_db91108c6b_z.jpg', NULL, NULL),
+(8, 17, NULL, '1557407100103038489.jpg', NULL, NULL),
+(9, NULL, 5, '1557407171Advert.pages.zip', NULL, NULL),
+(10, NULL, 6, '1557408662103038489.jpg', NULL, NULL),
+(11, NULL, 7, '1557408707103038489.jpg', NULL, NULL);
+
+
+
+
+
+-

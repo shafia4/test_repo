@@ -1,0 +1,83 @@
+{
+  "name": "laravel/laravel",
+  "description": "The Laravel Framework.",
+  "keywords": [
+    "framework",
+    "laravel"
+  ],
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "php": "^7.2.5",
+    "fideloper/proxy": "^4.2",
+    "fruitcake/laravel-cors": "^1.0",
+    "guzzlehttp/guzzle": "^6.3",
+    "laravel/framework": "^7.0",
+    "laravel/tinker": "^2.0"
+  },
+  "require-dev": {
+    "beyondcode/laravel-er-diagram-generator": "^1.4",
+    "facade/ignition": "^2.0",
+    "filp/whoops": "~2.0",
+    "fzaninotto/faker": "^1.9.1",
+    "laravel/dusk": "^6.3",
+    "laravel/ui": "^2.0",
+    "mockery/mockery": "^1.3.1",
+    "nunomaduro/collision": "^4.1",
+    "phpunit/phpunit": "^8.5",
+    "symfony/thanks": "^1.0"
+  },
+  "autoload": {
+    "classmap": [
+      "database/seeds",
+      "database/factories"
+    ],
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "dont-discover": []
+    }
+  },
+  "scripts": {
+    "clear": [
+      "php artisan clear",
+      "php artisan route:clear",
+      "php artisan view:clear",
+      "php artisan cache:clear",
+      "php artisan config:clear"
+    ],
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "@php artisan key:generate"
+    ],
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover"
+    ],
+    "post-install-cmd": [
+      "Illuminate\\Foundation\\ComposerScripts::postInstall",
+      "@php artisan optimize",
+      "chmod -R 755 bootstrap/cache"
+    ],
+    "run-test": [
+      "php artisan migrate:fresh --force",
+      "php artisan db:seed --class=DummySeeder --force",
+      "php artisan dusk"
+    ]
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}

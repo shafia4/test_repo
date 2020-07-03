@@ -1,0 +1,900 @@
+-- phpMyAdmin SQL Dump
+-- version 4.4.1.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost:8889
+-- Erstellungszeit: 25. Mai 2020 um 16:45
+-- Server-Version: 5.5.42
+-- PHP-Version: 5.6.7
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Datenbank: `whiteapp`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `assets`
+--
+
+CREATE TABLE `assets` (
+  `id` int(10) unsigned NOT NULL,
+  `assettype_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `assetusage_id` int(11) DEFAULT NULL,
+  `liability_id` int(11) DEFAULT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `purchasedate` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `licenseplate` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `currency_id` int(11) NOT NULL,
+  `milage` int(11) DEFAULT NULL,
+  `serialnr` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `brand` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `artist` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `value` int(11) DEFAULT NULL,
+  `initialinvestment` int(11) DEFAULT NULL,
+  `valuebase` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `street` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `coordinates` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `revenue` int(11) DEFAULT NULL,
+  `costs` int(11) DEFAULT NULL,
+  `interest` decimal(8,2) DEFAULT NULL,
+  `enddate` int(11) DEFAULT NULL,
+  `term` int(11) DEFAULT NULL,
+  `notes` longtext COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `assets`
+--
+
+INSERT INTO `assets` (`id`, `assettype_id`, `user_id`, `assetusage_id`, `liability_id`, `name`, `purchasedate`, `licenseplate`, `currency_id`, `milage`, `serialnr`, `brand`, `artist`, `value`, `initialinvestment`, `valuebase`, `street`, `city`, `coordinates`, `revenue`, `costs`, `interest`, `enddate`, `term`, `notes`, `created_at`, `updated_at`) VALUES
+(2, 3, 1, 1, 2, 'Helga', NULL, NULL, 1, NULL, NULL, NULL, NULL, 344, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, '0.00', 13, 6, 'Helga ist die Marke der Evasis edibles gmbh in berndorf, noederösterreich', '2019-04-25 05:26:05', '2020-05-25 10:03:57'),
+(4, 1, 1, 2, 0, 'Rosalia Chladek Gasse', NULL, NULL, 1, NULL, NULL, NULL, NULL, 299000, NULL, 'Kaufpreis', '1220', 'Rosalia Chladek Gasse', NULL, 0, 0, NULL, NULL, NULL, 'In Essling', '2019-04-29 10:47:21', '2020-05-25 10:04:06'),
+(7, 4, 1, 1, 0, 'A Lange Söhne', '1.1.1209', NULL, 1, NULL, '750/833', 'A LAnge Söhne', NULL, 25000, 22000, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<input class="form-control" placeholder="{{$liability->contractnr}}" type="text" name="contractnr" maxlength="100">\r\n                <span>Kreditvertragsnummer</span>\r\n           \r\n              </div>\r\n\r\n\r\n              <div class="form-group">\r\n                \r\n                <input class="form-control" placeholder="{{$liability->creditor}}" type="text" name="creditor" maxlength="100">\r\n                <span>Kreditge', '2019-05-08 07:46:37', '2020-05-04 09:55:48'),
+(8, 5, 1, 2, 0, 'Citroen C5', '1.1.2012', 'W63865A', 2, 1234567, '12345', 'Citroen c5 Tourer', NULL, 6500, 20000, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'oder doch nicht?', '2019-05-08 07:57:03', '2019-05-16 17:34:42'),
+(9, 3, 1, 1, 0, 'VVB Vorsorgekasse', '1.1.2019', NULL, 8, NULL, '1234', 'VVB Vorsorgekasse', 'Wien Energie', 5, 22000, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, '0.00', NULL, NULL, 'g', '2019-05-08 08:04:45', '2020-05-25 10:04:15'),
+(12, 9, 1, 1, 0, 'Silberbarren', 'various', 'Kasten oben , Wärmepflaster', 1, NULL, NULL, 'Silber', '1,9 kg', 770000, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '925 Silber echtheitszertifikat', '2019-05-08 08:25:35', '2020-05-23 17:22:36'),
+(13, 10, 1, 1, 0, 'Volksbank', '1.1.2019', 'LAde Gürtel', 1, NULL, '23234325235', 'Volksbank Wien', NULL, 100000, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, '3.50', NULL, NULL, 'jkn', '2019-05-08 08:27:42', '2020-05-25 10:06:40'),
+(14, 12, 1, 1, 0, 'Rauchfangkehrer Firma', '1.1.2019', '95%', 1, NULL, 'FN 123456 ab', 'Mahler-Hutter KG', 'Ulrike Schildböck', 270000, 0, 'Kaufpreis', NULL, '2560 Berndorf', NULL, 0, 0, NULL, NULL, NULL, 'Rauchfangkehrer Firma .... KG Vertrag vom 23-8-2016', '2019-05-08 08:32:20', '2020-05-25 10:05:16'),
+(15, 13, 1, 1, 0, 'OMV Aktien', '1.1.2019', '234', 6, NULL, '12345', 'Bank Austria', NULL, 200000, 310, 'Kaufpreis', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 'oinö', '2019-05-08 08:46:59', '2020-05-25 10:06:05'),
+(16, 14, 1, 1, 0, 'Wienerberger Anleihe 2022', '1.1.2222', '22', 5, NULL, '1234', 'Bank Austrsi', NULL, 10000, 1234, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, '0.00', NULL, NULL, 'abd lorem ipsum', '2019-05-08 08:49:39', '2019-08-21 15:42:36'),
+(17, 16, 1, 1, 0, 'Ferienhjaus zur Vermietung', NULL, NULL, 7, NULL, NULL, NULL, NULL, 150000, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-09 08:42:47', '2019-05-16 17:23:27'),
+(26, 1, 2, 1, 0, 'Manuel Mahler-Hutter', NULL, NULL, 1, NULL, NULL, NULL, NULL, 3560, NULL, 'Kaufpreis', 'Tokiostrasse, 6/2/14', 'Wien', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-08-21 10:14:37', '2019-08-21 10:14:48'),
+(32, 14, 1, 1, 0, 'Manuel Mahler-Hutter', NULL, NULL, 1, NULL, NULL, NULL, NULL, 1, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-08-22 11:31:40', '2020-05-14 17:18:36'),
+(33, 1, 1, 2, 0, 'Speisinger Strasse 113', NULL, NULL, 1, NULL, NULL, NULL, NULL, 185000, NULL, 'Kaufpreis', NULL, 'Speisinger Strasse 113', NULL, 0, 0, NULL, NULL, NULL, 'Vermiete an Kevin Chmel', '2019-11-13 09:06:14', '2020-05-25 10:06:15'),
+(35, 17, 1, 1, 0, 'Bitcoin Account', NULL, NULL, 9, NULL, NULL, NULL, NULL, 13, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-04-16 09:50:03', '2020-04-16 09:50:42'),
+(36, 15, 1, 1, 0, 'bit.ly', NULL, NULL, 2, NULL, NULL, NULL, NULL, 2500, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1o Prozent zinsen', '2020-04-16 09:51:44', '2020-05-07 11:15:44'),
+(37, 1, 1, 1, 0, 'Russia Today', NULL, NULL, 1, NULL, NULL, NULL, NULL, 2543, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-04-20 10:01:19', '2020-04-20 10:01:19'),
+(38, 1, 1, 1, 0, 'Russia Todayö', NULL, NULL, 1, NULL, NULL, NULL, NULL, 6524, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-04-20 10:04:58', '2020-04-20 10:05:48'),
+(39, 7, 1, 2, 0, 'Manuel Mahler-Hutter', NULL, NULL, 1, NULL, NULL, NULL, NULL, 3560, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-08 12:40:05', '2020-05-23 18:01:06'),
+(40, 8, 1, 1, 0, 'Cashbestand', NULL, NULL, 1, NULL, NULL, NULL, NULL, 1000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-10 09:27:39', '2020-05-10 09:27:39'),
+(41, 1, 5, 1, 0, 'Manuel Mahler-Hutter', NULL, NULL, 2, NULL, NULL, NULL, NULL, 3560, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-11 09:34:44', '2020-05-11 09:34:44'),
+(53, 1, 1, 1, 0, 'Russia Today', NULL, NULL, 5, NULL, NULL, NULL, NULL, 4, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-11 15:17:41', '2020-05-11 15:28:07'),
+(54, 1, 1, 1, 0, 'Russia Today', NULL, NULL, 1, NULL, NULL, NULL, NULL, 15, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-11 15:36:02', '2020-05-11 15:36:02'),
+(55, 1, 1, 1, 0, 'Manuel Mahler-Hutter', NULL, NULL, 5, NULL, NULL, NULL, NULL, 3560, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-11 15:55:39', '2020-05-11 15:55:39'),
+(56, 1, 1, 1, 0, 'Manuel Mahler-Hutter', NULL, NULL, 5, NULL, NULL, NULL, NULL, 3560, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-11 15:56:34', '2020-05-11 15:56:34'),
+(58, 1, 1, 1, 0, 'Russia Today', NULL, NULL, 5, NULL, NULL, NULL, NULL, 3560, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-11 15:57:42', '2020-05-11 15:57:42'),
+(59, 1, 1, 1, 0, 'Russia Today', NULL, NULL, 5, NULL, NULL, NULL, NULL, 3560, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-11 15:58:02', '2020-05-11 15:58:02'),
+(60, 1, 1, 1, 0, 'Russia Today', NULL, NULL, 5, NULL, NULL, NULL, NULL, 3560, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-11 15:58:22', '2020-05-11 15:58:22'),
+(62, 1, 1, 1, 0, 'Manuel Mahler-Hutter', NULL, NULL, 8, NULL, NULL, NULL, NULL, 1000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-11 16:15:57', '2020-05-11 16:15:57'),
+(63, 1, 1, 2, 0, 'Haus Rauchfangkehrergasse', NULL, NULL, 8, NULL, NULL, NULL, NULL, 2544, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-12 07:10:36', '2020-05-12 07:10:36'),
+(64, 10, 7, 1, 0, 'Sparbuch', NULL, 'LAde Gürtel', 8, NULL, '453', 'Farer', NULL, 3000, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, '3.23', NULL, NULL, NULL, '2020-05-12 18:33:31', '2020-05-12 18:34:22'),
+(65, 1, 7, 1, 0, 'Manuel', NULL, NULL, 1, NULL, NULL, NULL, NULL, 1000, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'jhjbh', '2020-05-12 18:34:38', '2020-05-12 18:34:50'),
+(66, 1, 7, 2, 0, 'Haus Rauchfangkehrergasse', NULL, NULL, 8, NULL, NULL, NULL, NULL, 3450000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-12 18:35:08', '2020-05-12 18:35:08'),
+(68, 1, 6, 2, 0, 'k', NULL, NULL, 2, NULL, NULL, NULL, NULL, 6, NULL, 'Kaufpreis', NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, '2020-05-13 06:34:20', '2020-05-13 06:35:32'),
+(69, 7, 1, 1, 0, 'Manuel Mahler-Hutter', NULL, NULL, 1, NULL, NULL, NULL, NULL, 3560, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-14 17:16:06', '2020-05-14 17:17:26'),
+(70, 1, 1, 1, 0, 'Manuel Mahler-Hutter', NULL, NULL, 1, NULL, NULL, NULL, NULL, 3560, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-15 08:43:28', '2020-05-15 08:43:28'),
+(71, 1, 8, 2, 0, 'House Newark', NULL, NULL, 2, NULL, NULL, NULL, NULL, 256000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-19 14:31:58', '2020-05-19 14:31:58'),
+(72, 4, 8, 1, 0, 'Patek Philipe Nautilus', '31.3.2018', NULL, 2, NULL, '35569', 'Patek Philippe', NULL, 25000, 32000, 'Discounted CF', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-19 14:33:18', '2020-05-19 14:34:29'),
+(73, 1, 8, 1, 0, 'Flat Tokiostrase', NULL, NULL, 2, NULL, NULL, NULL, NULL, 235000, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-19 14:39:46', '2020-05-19 14:39:51'),
+(75, 7, 8, 1, 0, 'Meer mit Frau', '01.01.2020', 'Living Room Vienna', 1, NULL, NULL, 'Aquarell', 'Karl Dauer', 23000, 17000, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-19 14:41:18', '2020-05-19 14:42:08'),
+(77, 1, 1, 1, 0, 'Manuel Mahler-Hutter', NULL, NULL, 2, NULL, NULL, NULL, NULL, 3560, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-20 07:45:41', '2020-05-20 07:45:41'),
+(80, 1, 1, 1, 0, 'Manuel Mahler-Hutter', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-20 09:49:59', '2020-05-20 09:49:59'),
+(81, 1, 1, 1, 0, 'Manuel Mahler-Hutter', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-20 09:56:46', '2020-05-20 09:56:46'),
+(82, 1, 6, 1, 0, 'k', NULL, NULL, 5, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-20 09:58:16', '2020-05-20 09:58:16'),
+(83, 8, 1, 1, NULL, 'Cash Vienna', NULL, NULL, 2, NULL, NULL, NULL, NULL, 25000, NULL, 'Kaufpreis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-05-23 18:01:19', '2020-05-23 18:01:25');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `assettypes`
+--
+
+CREATE TABLE `assettypes` (
+  `id` int(10) unsigned NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `assettypes`
+--
+
+INSERT INTO `assettypes` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'assettype.immo', NULL, NULL),
+(3, 'assettype.crowdfunding', NULL, NULL),
+(4, 'assettype.watch', NULL, NULL),
+(5, 'assettype.car', NULL, NULL),
+(6, 'assettype.pension', NULL, NULL),
+(7, 'assettype.art', NULL, NULL),
+(8, 'assettype.cash', NULL, NULL),
+(9, 'assettype.gold', NULL, NULL),
+(10, 'assettype.saving', NULL, NULL),
+(12, 'assettype.share', NULL, NULL),
+(13, 'assettype.stock', NULL, NULL),
+(14, 'assettype.bond', NULL, NULL),
+(15, 'assettype.factoring', NULL, NULL),
+(16, 'assettype.other', NULL, NULL),
+(17, 'assettype.crypto', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `assetusages`
+--
+
+CREATE TABLE `assetusages` (
+  `id` int(10) unsigned NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `assetusages`
+--
+
+INSERT INTO `assetusages` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'hold', NULL, NULL),
+(2, 'rent', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `asset_partner`
+--
+
+CREATE TABLE `asset_partner` (
+  `id` int(10) unsigned NOT NULL,
+  `asset_id` int(11) NOT NULL,
+  `partner_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `contracts`
+--
+
+CREATE TABLE `contracts` (
+  `id` int(10) unsigned NOT NULL,
+  `asset_id` int(11) DEFAULT NULL,
+  `liability_id` int(11) DEFAULT NULL,
+  `partner_id` int(11) DEFAULT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` int(11) DEFAULT NULL,
+  `storedlocation` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `path` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `agreedon` int(11) DEFAULT NULL,
+  `termination` int(11) DEFAULT NULL,
+  `reminderterm` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reminderreg` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `contracts`
+--
+
+INSERT INTO `contracts` (`id`, `asset_id`, `liability_id`, `partner_id`, `name`, `value`, `storedlocation`, `path`, `agreedon`, `termination`, `reminderterm`, `reminderreg`, `created_at`, `updated_at`) VALUES
+(1, 3, 0, 1, 'Maja', 1000, 'in meiner schublade', NULL, 1564531200, 564531200, 'none', '21', '2019-04-25 05:27:10', '2019-04-29 13:36:40'),
+(3, 3, 0, 3, 'Manuel Mahler-Hutter', 3560, 'in meiner schublade', NULL, 1564531200, 1564531200, 'none', NULL, '2019-04-27 08:45:44', '2019-04-29 05:19:26'),
+(9, 1, 0, 1, 'pdf', NULL, 'in meiner schublade', NULL, 1564531200, 1564531200, 'none', NULL, '2019-04-27 11:47:06', '2019-04-29 08:24:10'),
+(12, 2, 0, 0, 'Helgavertrag', NULL, 'Safe', NULL, 1588802400, 1589839200, '1', '1', '2019-04-29 07:09:47', '2020-05-14 06:52:04'),
+(22, 1, 0, 2, 'Upload', 3560, NULL, '1556564226AT742081500000410860_D5680DEC32C4B811.pdf', 1564531200, 1564531200, 'none', NULL, '2019-04-29 14:57:06', '2019-04-29 14:57:06'),
+(25, 0, 6, NULL, 'Russia Today', NULL, NULL, '1557837003AT742081500000410860_D5680DEC32C4B811.pdf', 1564531200, 1564531200, NULL, '', NULL, NULL),
+(26, 0, 9, NULL, 'Russia Today', NULL, NULL, '1557837061AT742081500000410860_D5680DEC32C4B811.pdf', 1564531200, 1564531200, NULL, NULL, NULL, NULL),
+(27, 0, 8, NULL, 'Russia Today', NULL, NULL, '1557838474AT742081500000410860_D5680DEC32C4B811.pdf', 1564531200, 1564531200, NULL, NULL, NULL, NULL),
+(30, 21, NULL, 2, 'Kaufvertrag', NULL, 'in meiner schublade', '1566291374MMH_CV_EN.pdf', 1565222400, 1567555200, '1w', NULL, '2019-08-20 06:56:14', '2019-08-20 06:56:14'),
+(35, 8, NULL, 0, 'Servicevertrag', NULL, NULL, NULL, 1566345600, 1566943200, '1', '1', '2019-08-20 09:39:15', '2019-08-30 11:28:04'),
+(37, 26, NULL, 0, 'löm', NULL, 'kmö', NULL, 0, 0, '1', '1', '2019-08-21 10:14:55', '2019-08-21 10:18:20'),
+(39, 26, NULL, 2, 'ebr', NULL, NULL, NULL, 0, 0, '1', '1', '2019-08-21 10:16:09', '2019-08-21 10:16:18'),
+(42, 20, NULL, 0, 'Contracttodelete', NULL, NULL, '1566466884mmh.jpg', 0, 0, 'none', 'none', '2019-08-22 09:41:24', '2019-08-22 09:41:24'),
+(43, 27, NULL, 0, 'delete', NULL, NULL, '1566467812mmh.jpg', 0, 0, 'none', 'none', '2019-08-22 09:56:52', '2019-08-22 09:56:52'),
+(45, NULL, 2, NULL, 'Bausparkredit 2,24%', NULL, NULL, '1587709608knausi.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
+(46, NULL, 2, NULL, 'Bausparkredit 2,24%', NULL, NULL, '1587709633AT742081500000410860_D5680DEC32C4B811.pdf', NULL, NULL, NULL, NULL, NULL, NULL),
+(47, 4, NULL, 4, 'Mietvertrag Virgil', 3560, 'Safe', '1588585561HC10732148.pdf', 1590357600, 1590444000, 'add.remindnone', 'add.none', '2020-05-04 09:46:01', '2020-05-25 08:49:58'),
+(48, 7, NULL, 15, 'Kaufvertrag', NULL, 'in meiner schublade', '1588585948knausi.jpg', 1590444000, 1588629600, 'add.remind14', 'remind5r', '2020-05-04 09:52:28', '2020-05-25 10:34:17'),
+(49, NULL, 12, NULL, 'Darlehen Razanac', NULL, NULL, '1588761506knausi.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
+(50, NULL, 7, NULL, 'Russia Today', NULL, NULL, '1588832127IMG_20200312_055249.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
+(51, NULL, 7, NULL, 'Russia Today', NULL, NULL, '1588832190knausi.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
+(52, 66, NULL, 17, 'Mietvertrag', 4500, NULL, NULL, 0, 0, '1', '1', '2020-05-12 18:36:01', '2020-05-12 18:37:08');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `contract_partner`
+--
+
+CREATE TABLE `contract_partner` (
+  `id` int(10) unsigned NOT NULL,
+  `contract_id` int(11) NOT NULL,
+  `partner_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `contract_partner`
+--
+
+INSERT INTO `contract_partner` (`id`, `contract_id`, `partner_id`, `created_at`, `updated_at`) VALUES
+(1, 5, 1, NULL, NULL),
+(2, 6, 1, NULL, NULL),
+(3, 7, 1, NULL, NULL),
+(4, 8, 1, NULL, NULL),
+(7, 11, 3, NULL, NULL),
+(16, 2, 2, NULL, NULL),
+(17, 9, 2, NULL, NULL),
+(26, 13, 1, NULL, NULL),
+(34, 14, 2, NULL, NULL),
+(35, 4, 2, NULL, NULL),
+(42, 10, 2, NULL, NULL),
+(49, 15, 2, NULL, NULL),
+(50, 16, 2, NULL, NULL),
+(51, 1, 2, NULL, NULL),
+(53, 22, 2, NULL, NULL),
+(56, 28, 0, NULL, NULL),
+(57, 29, 0, NULL, NULL),
+(58, 30, 2, NULL, NULL),
+(59, 31, 2, NULL, NULL),
+(60, 32, 3, NULL, NULL),
+(61, 33, 2, NULL, NULL),
+(70, 21, 8, NULL, NULL),
+(87, 39, 2, NULL, NULL),
+(91, 38, 3, NULL, NULL),
+(92, 23, 7, NULL, NULL),
+(93, 40, 2, NULL, NULL),
+(94, 34, 2, NULL, NULL),
+(96, 42, 0, NULL, NULL),
+(97, 43, 0, NULL, NULL),
+(112, 44, 7, NULL, NULL),
+(115, 52, 17, NULL, NULL),
+(130, 47, 4, NULL, NULL),
+(135, 48, 15, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `crowdfunds`
+--
+
+CREATE TABLE `crowdfunds` (
+  `id` int(10) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `currencies`
+--
+
+CREATE TABLE `currencies` (
+  `id` int(10) unsigned NOT NULL,
+  `leadcurrency` int(11) NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tolead` decimal(10,2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `currencies`
+--
+
+INSERT INTO `currencies` (`id`, `leadcurrency`, `name`, `tolead`, `created_at`, `updated_at`) VALUES
+(1, 1, '\r\nEUR', '1.00', NULL, NULL),
+(2, 0, 'USD', '0.90', NULL, NULL),
+(5, 0, 'HRK', '0.14', NULL, NULL),
+(6, 0, 'BAM', '0.45', NULL, NULL),
+(7, 0, 'GBP', '1.13', NULL, NULL),
+(8, 0, 'CHF', '1.13', NULL, NULL),
+(9, 0, 'BTC', '7350.00', NULL, NULL),
+(10, 0, 'LTC', '99.00', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `documents`
+--
+
+CREATE TABLE `documents` (
+  `id` int(10) unsigned NOT NULL,
+  `asset_id` int(11) NOT NULL,
+  `partner_id` int(11) DEFAULT NULL,
+  `path` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `documents`
+--
+
+INSERT INTO `documents` (`id`, `asset_id`, `partner_id`, `path`, `name`, `created_at`, `updated_at`) VALUES
+(1, 2, NULL, '1562227579Bildschirmfoto 2019-05-19 um 17.32.52.png', 'Baubefund', NULL, NULL),
+(7, 12, NULL, '1566463348mmh.jpg', 'karnix', NULL, NULL),
+(8, 20, NULL, '1566466572mmh.jpg', 'klljk', NULL, NULL),
+(10, 20, NULL, '1566466861mmh.jpg', 'dokumenttodelte', NULL, NULL),
+(11, 27, NULL, '1566467798mmh.jpg', 'delete', NULL, NULL),
+(12, 28, NULL, '1566468429mmh.jpg', 'deletinggg', NULL, NULL),
+(13, 29, NULL, '1566468662mmh.jpg', 'deee', NULL, NULL),
+(15, 32, NULL, '1566473713mmh.jpg', 'Echtheitszertifikat', NULL, NULL),
+(16, 33, NULL, '1573636025Einkommenssteuervorauszahlung 2017.pdf', 'Befund Strom', NULL, NULL),
+(17, 4, NULL, '1588585331IMG_20200312_055249.jpg', 'Kaufvertrag', NULL, NULL),
+(18, 4, NULL, '1588585371HC10732148.pdf', 'Kaufvertrag test pdf', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `immos`
+--
+
+CREATE TABLE `immos` (
+  `id` int(10) unsigned NOT NULL,
+  `asset_id` int(11) NOT NULL,
+  `purchasedate` date DEFAULT NULL,
+  `street` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `zipcode` int(11) DEFAULT NULL,
+  `geolocation` int(11) DEFAULT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rented` int(11) DEFAULT NULL,
+  `yearlyincome` int(11) DEFAULT NULL,
+  `yearlycost` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `inhereracesses`
+--
+
+CREATE TABLE `inhereracesses` (
+  `id` int(10) unsigned NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `inherer_id` int(11) NOT NULL,
+  `acessed` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `inhereracesses`
+--
+
+INSERT INTO `inhereracesses` (`id`, `user_id`, `inherer_id`, `acessed`, `created_at`, `updated_at`) VALUES
+(1, 8, 25, 1589899456, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `inherers`
+--
+
+CREATE TABLE `inherers` (
+  `id` int(10) unsigned NOT NULL,
+  `is_active` int(11) NOT NULL DEFAULT '0',
+  `user_id` int(11) NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prename` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telnr` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `passcode` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `graceperiod` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` longtext COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `inherers`
+--
+
+INSERT INTO `inherers` (`id`, `is_active`, `user_id`, `name`, `prename`, `email`, `telnr`, `passcode`, `graceperiod`, `message`, `created_at`, `updated_at`) VALUES
+(7, 0, 2, 'Manuel', 'Manuel', 'manuelmahlerhutter@gmail.comm', '06502504784', '5997036', '604800', NULL, '2019-05-22 10:40:24', '2020-04-17 11:20:11'),
+(14, 0, 2, 'qs', NULL, NULL, NULL, '7cf2821', '86400', NULL, '2019-08-21 14:57:18', '2019-08-21 14:57:18'),
+(16, 0, 2, 'qs', NULL, NULL, NULL, 'a719ad8', '0', NULL, '2019-08-21 14:57:12', '2019-08-21 14:57:12'),
+(24, 0, 5, 'Manuel', 'Manuel', 'manuelmahlerhutter@gmail.commmm', '06502504784l', '6e5fd98', '0', NULL, '2020-05-11 09:35:41', '2020-05-11 09:35:44'),
+(25, 1, 8, 'Martin', NULL, 'mahlerhutter@gmx.at', NULL, '001fca2', '86400', NULL, '2020-05-19 14:35:16', '2020-05-19 14:35:16');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `liabilities`
+--
+
+CREATE TABLE `liabilities` (
+  `id` int(10) unsigned NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `liabilitytype` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `agreementdate` int(11) DEFAULT NULL,
+  `contractnr` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `licenseplate` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creditor` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `currency_id` int(11) DEFAULT NULL,
+  `term` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `currentvalue` int(11) DEFAULT NULL,
+  `initialvalue` int(11) DEFAULT NULL,
+  `interest` double(8,2) DEFAULT NULL,
+  `enddate` int(11) DEFAULT NULL,
+  `notes` longtext COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `liabilities`
+--
+
+INSERT INTO `liabilities` (`id`, `user_id`, `liabilitytype`, `name`, `agreementdate`, `contractnr`, `licenseplate`, `creditor`, `currency_id`, `term`, `currentvalue`, `initialvalue`, `interest`, `enddate`, `notes`, `created_at`, `updated_at`) VALUES
+(2, 1, 'loankind.buildingloan', 'Bausparkredit 2,24%', 1566424800, '526626998556441', NULL, 'Visa Bank AG', 7, NULL, 1000, 2000, 3.56, 1567029600, '+ö.,', '2019-05-13 08:23:42', '2020-05-18 06:51:12'),
+(3, 2, 'Kreditkarte', 'Gehaltsvorauszahlung', NULL, '123456', NULL, 'Visa Bank AG', 1, NULL, 156156, 321, NULL, 2019, NULL, '2019-05-13 08:34:01', '2019-05-22 12:39:59'),
+(4, 2, 'Kreditkarte', 'Darlehensvertrag', 2019, '123456', NULL, 'Brenntag Austria AG', 5, NULL, 225635, 350000, 3.25, 2019, 'Infos zu diesem Board\r\n Beschreibung für Ihr Board hinzufügen\r\n Hintergrund ändern\r\n Karten filtern', '2019-05-13 09:22:36', '2019-05-22 10:30:50'),
+(6, 1, 'loankind.wageloan', 'Manuel Mahler-Hutter', NULL, '45', NULL, 'Brenntag Austria AG', 5, NULL, 25654, 123456, 3.00, 2019, '321', '2019-05-14 07:19:03', '2020-05-18 07:08:44'),
+(7, 1, 'Privatkredit', 'Russia Today', NULL, NULL, NULL, NULL, 2, NULL, 9, 9, 3.54, NULL, NULL, '2019-05-14 07:25:47', '2020-05-18 06:41:56'),
+(12, 1, 'Kreditkarte', 'Darlehen Razanac', NULL, '231', NULL, 'Visa Bank AG', 1, NULL, 35222, 123, 3.33, NULL, NULL, '2019-05-16 04:28:36', '2020-05-06 10:38:26'),
+(20, 2, 'Kreditkarte', 'jk', 0, NULL, NULL, NULL, 7, NULL, 233, NULL, 8.00, 0, NULL, '2019-08-21 14:43:03', '2019-08-21 14:43:03'),
+(23, 5, 'Kreditkarte', 'Russia Today', 0, NULL, NULL, NULL, 10, NULL, 250, 250, 0.00, 0, NULL, '2020-05-11 09:34:57', '2020-05-11 09:34:57'),
+(24, 1, 'Kreditkarte', 'Manuel Mahler-Hutter', 0, NULL, NULL, NULL, 10, NULL, 2533, 2533, 0.00, 0, NULL, '2020-05-11 15:23:30', '2020-05-11 15:23:30'),
+(25, 7, 'Kreditkarte', 'Kredit', 0, NULL, NULL, NULL, 8, NULL, 345, 345, 0.00, 0, NULL, '2020-05-12 18:33:51', '2020-05-12 18:33:51'),
+(27, 6, 'Kreditkarte', 'kl', 0, NULL, NULL, NULL, 10, NULL, 2, 2, 0.00, 0, NULL, '2020-05-13 06:34:53', '2020-05-13 06:34:53'),
+(28, 1, 'loankind.creditcard', 'dsf', 0, NULL, NULL, NULL, 10, NULL, 32, 32, 0.00, 0, NULL, '2020-05-18 06:40:20', '2020-05-18 06:40:20'),
+(29, 8, 'Wohnbaukredit', 'Loan Newark', 1420066800, '136516', NULL, 'Banking inc', 2, NULL, 125000, 200000, 3.50, 1893366000, NULL, '2020-05-19 14:32:53', '2020-05-19 14:32:53');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=163 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(144, '2014_10_12_000000_create_users_table', 1),
+(145, '2014_10_12_100000_create_password_resets_table', 1),
+(146, '2019_01_17_121031_create_assets_table', 1),
+(147, '2019_01_17_133200_create_immos_table', 1),
+(148, '2019_01_17_133218_create_crowdfunds_table', 1),
+(149, '2019_01_17_135012_create_assettypes_table', 1),
+(150, '2019_01_17_135030_create_assetusages_table', 1),
+(151, '2019_03_20_112004_create_documents_table', 1),
+(152, '2019_03_20_112043_create_contracts_table', 1),
+(153, '2019_03_20_112058_create_photos_table', 1),
+(154, '2019_03_20_112142_create_inherers_table', 1),
+(155, '2019_03_26_165109_create_partners_table', 1),
+(156, '2019_04_25_093717_create_contract_partner_table', 1),
+(157, '2019_04_25_095953_create_asset_partner_table', 1),
+(158, '2019_05_13_100834_create_liabilities_table', 1),
+(159, '2019_05_16_122455_create_roles_table', 1),
+(160, '2019_05_16_122545_create_plans_table', 1),
+(161, '2019_05_16_134309_create_currencies_table', 2),
+(162, '2019_08_19_161152_create_inhereracess_table', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `partners`
+--
+
+CREATE TABLE `partners` (
+  `id` int(10) unsigned NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tel` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `street` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `idnumber` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contactperson` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `partners`
+--
+
+INSERT INTO `partners` (`id`, `user_id`, `name`, `tel`, `email`, `street`, `city`, `idnumber`, `contactperson`, `created_at`, `updated_at`) VALUES
+(3, 1, 'MArtinus', '012356', 'mn@ddm.ss', 'efae', NULL, '34567', 'Mr. Martin May', '2019-04-25 05:55:21', '2019-04-25 05:55:21'),
+(4, 1, 'HAmid Danesh', '+436502504784', 'han@hamidd.dd', 'Tokiostrasse, 6/2/14', 'Wien', NULL, 'Hamid Danesh', '2019-04-29 10:49:17', '2019-08-22 10:27:23'),
+(7, 1, 'Sherif Haküolpmida', '+436502504784', 'manuelmahlerhutter@gmail.com', '6/2/14', NULL, 'üö+', 'sherif', '2019-05-09 09:31:47', '2019-05-09 09:31:47'),
+(8, 1, 'Karlovitsch', '06502504784', 'manuelmahlerhutter@gmail.com', '6/2/14', NULL, 'abcdefg 12345', 'Dr. Knauss', '2019-05-22 09:17:44', '2019-08-19 13:02:43'),
+(11, 1, 'Manuel Mahler-Hutterkm', NULL, 'manuel.mahler-hutter@wienenergie.at', NULL, NULL, NULL, NULL, '2019-08-21 10:31:52', '2019-08-21 10:31:52'),
+(12, 1, 'Manuel Mahler-Hutter', '+436502504784', 'manuelmahlerhutter@gmail.com', '6/2/14', NULL, '0815', 'Testaprtner 23', '2020-04-15 09:42:44', '2020-04-15 09:42:44'),
+(13, 1, 'Testpartner', NULL, NULL, NULL, NULL, NULL, NULL, '2020-04-15 09:43:13', '2020-04-15 09:43:13'),
+(15, 1, 'Virgil', '06502504784', 'manuelmahlerhutter@gmail.com', NULL, NULL, NULL, 'Martin Graf', '2020-05-04 09:45:06', '2020-05-04 09:45:06'),
+(16, 5, 'Manuel', '06502504784', 'manuelmahlerhutter@gmail.com', '6/2/14', NULL, NULL, 'mmm', '2020-05-11 09:35:59', '2020-05-11 09:35:59'),
+(17, 7, 'mieter meines hauses', '06502504784', 'manuelmahlerhutter@gmail.com', NULL, NULL, NULL, 'Testaprtner 23', '2020-05-12 18:36:41', '2020-05-12 18:36:41');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `photos`
+--
+
+CREATE TABLE `photos` (
+  `id` int(10) unsigned NOT NULL,
+  `asset_id` int(11) DEFAULT NULL,
+  `partner_id` int(11) DEFAULT NULL,
+  `path` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `photos`
+--
+
+INSERT INTO `photos` (`id`, `asset_id`, `partner_id`, `path`, `created_at`, `updated_at`) VALUES
+(2, NULL, 1, '15561801371901146_10203834421525862_6774409722254910769_n.jpg', NULL, NULL),
+(3, NULL, 3, '15561861212382450.jpg', NULL, NULL),
+(4, 1, NULL, '1556192523103038489.jpg', NULL, NULL),
+(5, 3, NULL, '15561937872382450.jpg', NULL, NULL),
+(7, 4, NULL, '15573132013261078731_db91108c6b_z.jpg', NULL, NULL),
+(8, 17, NULL, '1557407100103038489.jpg', NULL, NULL),
+(9, NULL, 5, '1557407171Advert.pages.zip', NULL, NULL),
+(10, NULL, 6, '1557408662103038489.jpg', NULL, NULL),
+(11, NULL, 7, '1557408707103038489.jpg', NULL, NULL),
+(12, NULL, 8, '1558523864Bildschirmfoto 2019-05-19 um 17.49.39.png', NULL, NULL),
+(13, 2, NULL, '1562225558mmh.jpg', NULL, NULL),
+(16, NULL, 4, '1566305338mmh.jpg', NULL, NULL),
+(18, NULL, 2, '1566306709mmh.jpg', NULL, NULL),
+(34, 20, NULL, '1566466867mmh.jpg', NULL, NULL),
+(35, 27, NULL, '1566467819mmh.jpg', NULL, NULL),
+(36, 32, NULL, '1566473796mmh.jpg', NULL, NULL),
+(37, 7, NULL, '157910290811638892_xxl_v1562741786792.jpg', NULL, NULL),
+(38, NULL, 12, '1586943764IMG_20200312_055249.jpg', NULL, NULL),
+(40, 4, NULL, '1588585342schokoladen-geburtstagskuchen.jpg', NULL, NULL),
+(41, NULL, 14, '1588585461knausi.jpg', NULL, NULL),
+(42, NULL, 15, '1588585506IMG_20200312_055249.jpg', NULL, NULL),
+(43, NULL, 15, '1588585983Bildschirmfoto 2020-02-04 um 12.07.06.png', NULL, NULL),
+(45, 8, NULL, '1588763418knausi.jpg', NULL, NULL),
+(46, NULL, 17, '1589308601Bildschirmfoto 2020-05-04 um 11.35.40.png', NULL, NULL),
+(47, 72, NULL, '1589898849uhr.jpg', NULL, NULL),
+(48, 74, NULL, '1589899246art.jpg', NULL, NULL),
+(49, 75, NULL, '1589899328art.jpg', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `plans`
+--
+
+CREATE TABLE `plans` (
+  `id` int(10) unsigned NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` int(10) unsigned NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `roles`
+--
+
+INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(3, 'admin', NULL, NULL),
+(4, 'free', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `street` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telnr` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `currency_id` int(11) DEFAULT NULL,
+  `role_id` int(11) DEFAULT NULL,
+  `plan_id` int(11) DEFAULT NULL,
+  `paiduntil` int(11) DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `street`, `city`, `country`, `telnr`, `currency_id`, `role_id`, `plan_id`, `paiduntil`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Ayn Rand', 'manuel.mahler-hutter@wienenergie.at', '$2y$10$z1sHTJ/29iyJwssnJZHe7.4d4Gaf6iA3HC4WQA/jR86tlT.0APnSC', 'Kuhlmannstrasse 28', 'Berndorf', 'Österreich', NULL, 1, 3, NULL, NULL, '3149lN26vXyuVUvs5OpPTD2pArSCSqOnB14qClOR2f0J551bwLB6dpxn3BDI', '2019-05-16 10:38:07', '2020-05-25 11:47:06'),
+(2, 'Manuel', 'manuelmahlerhutter@gmail.com', '$2y$10$b3uQg2FoPvxkSwoOaH2Hsu8GS.5SBZwl.drIGotqM.ym0anbnngeO', NULL, NULL, NULL, NULL, 2, 3, NULL, NULL, 'wmCSHr3rupdfLhS4rx767bWXcZPHUVe9Ib3AysJ9nlrLYNTPXREXosAiGSfp', '2019-05-22 09:47:07', '2019-05-22 10:11:32'),
+(6, 'ayn', 'ayn@rand.cc', '$2y$10$VOhCUu5OzzaX9cfBcKfUjuFDXLHr./f7ssf9O6D4vJ5bCLSL8wvnS', NULL, NULL, NULL, NULL, 5, 4, NULL, NULL, 'rndgxIHcNjEUpBSkx7ReeqjaVVHaWvH7GL73zyEMoEb66awhhuN4waOexzGZ', '2020-05-11 16:07:28', '2020-05-20 09:58:09'),
+(7, 'Natalie', 'natalie@natalie.cc', '$2y$10$kQjFnDCSt4VLFnrgv3jmtueok1jfqOuDgBkNeg1Ev3Jon/ELGhiO6', NULL, NULL, NULL, NULL, 8, 4, NULL, NULL, 'KSO5e88rWdH7elUQJUETC8mgrVd5SXd8X7n0SOTpR4bHSb4QvJaF2gH7NzPp', '2020-05-12 18:32:18', '2020-05-12 18:32:35'),
+(8, 'Ayn Rand', 'ayn@rand.eu', '$2y$10$nzBoUu7lnOuEP4srOR2M9utlsIE0m3SPN5p2kJcO5lpoeOTZ1ziF2', NULL, NULL, NULL, NULL, 2, 4, NULL, NULL, NULL, '2020-05-19 14:31:16', '2020-05-19 14:31:25');
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes für die Tabelle `assets`
+--
+ALTER TABLE `assets`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `assettypes`
+--
+ALTER TABLE `assettypes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `assetusages`
+--
+ALTER TABLE `assetusages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `asset_partner`
+--
+ALTER TABLE `asset_partner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `contracts`
+--
+ALTER TABLE `contracts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `contract_partner`
+--
+ALTER TABLE `contract_partner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `crowdfunds`
+--
+ALTER TABLE `crowdfunds`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `currencies`
+--
+ALTER TABLE `currencies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `documents`
+--
+ALTER TABLE `documents`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `immos`
+--
+ALTER TABLE `immos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `inhereracesses`
+--
+ALTER TABLE `inhereracesses`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `inherers`
+--
+ALTER TABLE `inherers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `inherers_email_unique` (`email`),
+  ADD UNIQUE KEY `inherers_telnr_unique` (`telnr`),
+  ADD UNIQUE KEY `inherers_passcode_unique` (`passcode`);
+
+--
+-- Indizes für die Tabelle `liabilities`
+--
+ALTER TABLE `liabilities`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `partners`
+--
+ALTER TABLE `partners`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indizes für die Tabelle `photos`
+--
+ALTER TABLE `photos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `plans`
+--
+ALTER TABLE `plans`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `assets`
+--
+ALTER TABLE `assets`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=84;
+--
+-- AUTO_INCREMENT für Tabelle `assettypes`
+--
+ALTER TABLE `assettypes`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+--
+-- AUTO_INCREMENT für Tabelle `assetusages`
+--
+ALTER TABLE `assetusages`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT für Tabelle `asset_partner`
+--
+ALTER TABLE `asset_partner`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT für Tabelle `contracts`
+--
+ALTER TABLE `contracts`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=53;
+--
+-- AUTO_INCREMENT für Tabelle `contract_partner`
+--
+ALTER TABLE `contract_partner`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=136;
+--
+-- AUTO_INCREMENT für Tabelle `crowdfunds`
+--
+ALTER TABLE `crowdfunds`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT für Tabelle `currencies`
+--
+ALTER TABLE `currencies`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT für Tabelle `documents`
+--
+ALTER TABLE `documents`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+--
+-- AUTO_INCREMENT für Tabelle `immos`
+--
+ALTER TABLE `immos`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT für Tabelle `inhereracesses`
+--
+ALTER TABLE `inhereracesses`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT für Tabelle `inherers`
+--
+ALTER TABLE `inherers`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+--
+-- AUTO_INCREMENT für Tabelle `liabilities`
+--
+ALTER TABLE `liabilities`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
+--
+-- AUTO_INCREMENT für Tabelle `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=163;
+--
+-- AUTO_INCREMENT für Tabelle `partners`
+--
+ALTER TABLE `partners`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+--
+-- AUTO_INCREMENT für Tabelle `photos`
+--
+ALTER TABLE `photos`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=50;
+--
+-- AUTO_INCREMENT für Tabelle `plans`
+--
+ALTER TABLE `plans`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT für Tabelle `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT für Tabelle `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
